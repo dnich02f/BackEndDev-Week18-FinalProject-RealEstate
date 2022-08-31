@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    password: realestate
+    username: realestate
+    url: jdbc:mysql://localhost:3306/realestate
+
+logging:
+  level:
+    root: warn
+    '[com.promineotech]': debug

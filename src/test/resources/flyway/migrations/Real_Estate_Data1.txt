@@ -1,0 +1,34 @@
+-- **Users** --
+INSERT INTO users (first_name, last_name, phone) VALUES('Hektor', 'Attaway', '755.223.5969');
+INSERT INTO users (first_name, last_name, phone) VALUES('Torbjørg', 'Maynard', '256.399.4665');
+INSERT INTO users (first_name, last_name, phone) VALUES('Agni', 'Van Altena', NULL);
+INSERT INTO users (first_name, last_name, phone) VALUES('Terzo', 'Kappel', '328.993.3774');
+INSERT INTO users (first_name, last_name, phone) VALUES('Businge', 'Foster', '399.377.3854');
+
+
+-- **Properties** --
+-- Single Family Properties
+INSERT INTO properties (property_id, square_feet, bedrooms, bathrooms, year_built, price, rental_income, property_status, property_description) VALUES('SINGLE_FAMILY', 3480, 5, 2.5, 1952, 499900.00, 2100.00, 'AVAILABLE', 'This amazing Brick Rancher will not disappoint. Over 2200 square feet spacious bedrooms and baths offer ample storage with room to grow. Inviting entry leads to family room with gas lit fireplace, separate dining room with completely updated kitchen and huge walk-in pantry. The ease of access offers a private oasis with deck, covered patio, on a coveted avenues lot just two blocks from a 4 star park.');
+INSERT INTO properties (property_id, square_feet, bedrooms, bathrooms, year_built, price, rental_income, property_status, property_description) VALUES('SINGLE_FAMILY', 1974, 2, 1.0, 1916, 265000.00, 1430.00, 'AVAILABLE', 'Walking distance to downtown festivities and cute as can be.  2 bedroom, 1 bath starter home.   Fenced front and back yard.  Kitchen, dining, living room, office/extra room & attic space.');
+INSERT INTO properties (property_id, square_feet, bedrooms, bathrooms, year_built, price, rental_income, property_status, property_description) VALUES('SINGLE_FAMILY', 2010, 5, 2.0, 2002, 349000.00, 1900.00, 'AVAILABLE', 'One-owner home with excellent curb appeal and a large covered front porch welcome you into comfortable & cozy living space with 3 bedrooms and 2 full bathrooms.  This home is in impeccable condition!  Main floor master retreat and laundry too!  Finished basement with additional living space and plenty of storage!  Pleasant and pristine outdoor landscape with lush green grass, mature trees, and an automatic sprinkler system!');
+INSERT INTO properties (property_id, square_feet, bedrooms, bathrooms, year_built, price, rental_income, property_status, property_description) VALUES('SINGLE_FAMILY', 2578, 4, 3.0, 1917, 355000.00, 1300.00, 'AVAILABLE', 'Classic, rennovated home with potential to tap into!');
+INSERT INTO properties (property_id, square_feet, bedrooms, bathrooms, year_built, price, rental_income, property_status, property_description) VALUES('SINGLE_FAMILY', 7183, 5, 6.0, 2008, 1275000.00, 4300.00, 'AVAILABLE', 'Prepare to be impressed by this superbly maintained, custom built home on a 5.5 acre lot in Fox Run! Enjoy magnificent city views from every floor of this nearly 7200 sq ft 5 bedroom, 6 bath home. This home boasts soaring ceilings, floor to ceiling windows, master retreat on each floor, and a luxurious layout for living and entertaining. Features also include theater room, wet bar with cooktop and full refrigerator and dishwasher, vault room, sunroom, hot water heat and a heated, insulated outbuilding!');
+
+-- Multi Unit Properties
+INSERT INTO properties (property_id, square_feet, bedrooms, bathrooms, year_built, price, rental_income, property_status, property_description) VALUES('MULTI_FAMILY', 3600, 6, 3.0, 2008, 470000.00, 2800.00, 'AVAILABLE', '6 bed 3 bath 4 bedroom on main level 2 bath 2 bedroom 1 bath downstairs 1 nonconforming we have a tanning bed downstairs that will stay and yes it does work. We also have a working hot tub that will stay with the home. Beautiful home in a very quiet neighborhood ');
+INSERT INTO properties (property_id, square_feet, bedrooms, bathrooms, year_built, price, rental_income, property_status, property_description) VALUES('MULTI_FAMILY', 2996, 5, 3.0, 1955, 599500.00, 2950.00, 'AVAILABLE', 'Walking distance to downtown festivities and cute as can be.  2 bedroom, 1 bath starter home.   Fenced front and back yard.  Kitchen, dining, living room, office/extra room & attic space.');
+INSERT INTO properties (property_id, square_feet, bedrooms, bathrooms, year_built, price, rental_income, property_status, property_description) VALUES('MULTI_FAMILY', 2010, 5, 3.0, 2002, 349000.00, 2300.00, 'AVAILABLE', 'This corner .56 Acre property is walking distance to Bike/walking path, in-between VA Medical Center and Sheridan Memorial Hospital.  Enjoy a large open floor plan, 14 foot high ceilings with a kitchen area that has plenty of cabinets, Some pull-out features, Luxury countertops, and more!  The heart of this home is the kitchen- with adjoining dining and living space makes this ideal for inside entertainment.');
+INSERT INTO properties (property_id, square_feet, bedrooms, bathrooms, year_built, price, rental_income, property_status, property_description) VALUES('MULTI_FAMILY', 1882, 4, 2.0, 1950, 264000.00, 1900.00, 'AVAILABLE', 'Classic, rennovated home with potential to tap into!');
+
+-- Commercial Properties
+INSERT INTO properties (property_id, square_feet, bedrooms, bathrooms, year_built, price, rental_income, property_status, property_description) VALUES('COMMERCIAL', 80000, 80, 60.0, 2010, 4500000.00, 100000.00, 'AVAILABLE', 'Very nice apartment complex with 4-plex units. 10 units in all for sale. All at $450K. 2 bedrooms, 1.5 bath per unit that have been well cared for with good rental history. All units are currently full. Nicely landscaped, large parking area with room for all tenants.');
+INSERT INTO properties (property_id, square_feet, bedrooms, bathrooms, year_built, price, rental_income, property_status, property_description) VALUES('COMMERCIAL', 16000, 16, 8.0, 2002, 1350000.00, 18000.00, 'AVAILABLE', 'Very well maintained 8 plex located near the YMCA, grocery stores, walking path, and park. Long term rental history in these units. All the units are two bedrooms and one bath with a washer and dryer hookup, covered patio, concrete parking lot, and some landscaping with sprinkler system on the common grounds.');
+
+-- **Offers** --
+INSERT INTO offers (user_fk, property_fk, price) VALUES (6, 10, 4250000);
+INSERT INTO offers (user_fk, property_fk, price) VALUES (1, 10, 4200000);
+
+-- **User_Properties** --
+INSERT INTO user_property (user_fk, property_fk) VALUES (6, 11);
+INSERT INTO user_property (user_fk, property_fk) VALUES (2, 5);
+INSERT INTO user_property (user_fk, property_fk) VALUES (1, 10);
