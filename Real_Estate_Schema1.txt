@@ -1,0 +1,47 @@
+DROP TABLE IF EXISTS user_property;
+DROP TABLE IF EXISTS offers;
+DROP TABLE IF EXISTS properties;
+DROP TABLE IF EXISTS users;
+
+
+CREATE TABLE users (
+  user_pk int unsigned NOT NULL AUTO_INCREMENT,
+  first_name varchar(45) NOT NULL, 
+  last_name varchar(45) NOT NULL,
+  phone varchar(20),
+  PRIMARY KEY (user_pk)
+);
+
+CREATE TABLE properties (
+  property_pk int unsigned NOT NULL AUTO_INCREMENT,
+  property_id enum('SINGLE_FAMILY', 'MULTI_FAMILY', 'COMMERCIAL') NOT NULL,
+  square_feet int NOT NULL,
+  bedrooms int NOT NULL,
+  bathrooms decimal(3, 1) NOT NULL,
+  year_built int NOT NULL,
+  price decimal(9, 2) NOT NULL,
+  rental_income decimal(9, 2) NULL,
+  property_status enum('AVAILABLE', 'NOT_AVAILABLE') NULL,
+  property_description varchar(550) NULL,
+  PRIMARY KEY (property_pk),
+  UNIQUE KEY (property_id, square_feet, bedrooms, bathrooms, year_built)
+);
+
+CREATE TABLE offers (
+  offer_pk int unsigned NOT NULL AUTO_INCREMENT,
+  user_fk int unsigned NOT NULL,
+  property_fk int unsigned NOT NULL,
+  price decimal(9, 2) NOT NULL,
+  PRIMARY KEY (offer_pk),
+  FOREIGN KEY (user_fk) REFERENCES users (user_pk) ON DELETE CASCADE,
+  FOREIGN KEY (property_fk) REFERENCES properties (property_pk) ON DELETE CASCADE
+);
+
+
+-- many to many relationship here. a user/investor can list many properties and a property can have many investors
+CREATE TABLE user_property (
+  user_fk int unsigned NOT NULL,
+  property_fk int unsigned NOT NULL,
+  FOREIGN KEY (user_fk) REFERENCES users (user_pk) ON DELETE CASCADE,
+  FOREIGN KEY (property_fk) REFERENCES properties (property_pk) ON DELETE CASCADE
+);
